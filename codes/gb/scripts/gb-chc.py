@@ -9,7 +9,6 @@ def gb_chc_to_gb_coh_init(force=False):
 
 
 # Map from the first to the second identifier type listed here
-
 def gb_chc_to_gb_coh(identifier):
     download = requests.get('http://beta.charitycommission.gov.uk/charity-details/?regid=' + str(identifier) +'&subid=0&exportcsv=1')
     data = csv.DictReader(download.content.splitlines())

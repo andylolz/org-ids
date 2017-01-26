@@ -36,7 +36,8 @@ for entry in id_lists:
     if entry['code'] in iati_codes:
         iati_codes.remove(entry['code'])
         if entry['deprecated'] == True:
-            deprecated_codes.append({entry['code']:entry['description']})
+            # deprecated_codes.append({entry['code']:entry['description']})
+            deprecated_codes.append(entry['code'])
         else:
             # We use available online to determine the value of public-database
             if entry['availableOnline']:
@@ -57,8 +58,8 @@ for entry in id_lists:
             ET.SubElement(item, "url").text = entry['url']
 
     else:
-        identify_codes.append({entry['code']:entry['confirmed']})
-
+        # identify_codes.append({entry['code']:entry['confirmed']})
+        identify_codes.append(entry['code'])
 
 
 print("IATI has the following codes missing from the Identify Org list")
